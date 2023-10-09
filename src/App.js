@@ -5,6 +5,11 @@ import AppFilter from "./components/app-filter/app-filter";
 import EmployersList from "./components/employers-list/employers-list";
 import EmployersAddForm from "./components/employers-add-form/employers-add-form";
 function App() {
+  const data = [
+    { name: "John C.", salary: 800, increase: false, id: 1 },
+    { name: "Carl W.", salary: 3000, increase: false, id: 2 },
+    { name: "Tamirlan", salary: 10000, increase: true, id: 3 },
+  ];
   return (
     <div className="app">
       <AppInfo />
@@ -12,7 +17,7 @@ function App() {
         <SearchPanel />
         <AppFilter />
       </div>
-      <EmployersList />
+      <EmployersList data={data} />
       <EmployersAddForm />
     </div>
   );
