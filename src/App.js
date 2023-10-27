@@ -11,7 +11,7 @@ function App() {
     { name: "Carl W.", salary: 3000, increase: false, id: 2 },
     { name: "Tamirlan", salary: 10000, increase: true, id: 3 },
   ]);
-  var maxid = 4;
+  const [maxid, setMaxid] = React.useState(4);
   const deleteItem = (id) => {
     // const index = database.findIndex((elem) => elem.id === id);
     // const before = database.slice(0, index);
@@ -21,11 +21,12 @@ function App() {
     setDatabase(database.filter((item) => item.id !== id));
   };
   const addItem = (name, salary) => {
+    setMaxid(maxid + 1);
     const newItem = {
       name,
       salary,
       increase: false,
-      id: maxid + 1,
+      id: maxid,
     };
     const newArr = [...database, newItem];
     setDatabase(newArr);
